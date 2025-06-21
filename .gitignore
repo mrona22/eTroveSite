@@ -1,16 +1,2 @@
-# Node modules and system files
-node_modules/
+node_modules
 .DS_Store
-
-src/
-*.log
-*.env
-.editorconfig
-package.json
-package-lock.json
-yarn.lock
-README.md
-webpack.config.js
-gulpfile.js
-.vscode/
-.gitignore
