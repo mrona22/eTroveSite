@@ -8,7 +8,8 @@ html(lang='en')
         meta(name='description', content='')
         meta(name='author', content='')
 
-        title eTrove LLC
+        title eTrove
+
 
         // Favicon
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
@@ -28,8 +29,8 @@ html(lang='en')
         // Navigation
         nav#mainNav.navbar.navbar-expand-lg.navbar-dark.fixed-top
             .container
-                a.navbar-brand(href='#page-top')
-                    img(src='assets/img/navbar-logo.svg', alt='...')
+                //- a.navbar-brand(href='#page-top')
+                //-     img(src='assets/img/navbar-logo.svg', alt='...')
                 button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                     | Menu
                     i.fas.fa-bars.ms-1
@@ -43,11 +44,12 @@ html(lang='en')
                             a.nav-link(href='#team') Team
                         li.nav-item
                             a.nav-link(href='#contact') Contact
+
         // Masthead
         header.masthead
             .container
-                .masthead-heading.text-uppercase
-                    | Think simple, powerful tech that sparks growth, unlocks fresh ideas, fuels creativity and innovation, and brings communities closer.
+                .masthead-subheading Welcome to eTrove LLC Official Website
+                .masthead-heading.text-uppercase It's Nice To Meet You
                 a.btn.btn-primary.btn-xl.text-uppercase(href='#services') Tell Me More
 
         // Services
@@ -98,8 +100,7 @@ html(lang='en')
                             .timeline-heading
                                 h4 2022
                             .timeline-body
-                                p.text-muted
-                                    | With no budget for outside developers, Minjae taught himself to code so classmates could trade confidently with verified school emails.
+                                p.text-muted With no budget for outside developers, Minjae taught himself to code so classmates could trade confidently with verified school emails.
                     li
                         .timeline-image
                             img.rounded-circle.img-fluid(src='assets/img/about/3.jpg', alt='2024')
@@ -116,8 +117,7 @@ html(lang='en')
                             .timeline-heading
                                 h4 2025
                             .timeline-body
-                                p.text-muted
-                                    | Our five-person team launched Swap Door and attracted 598 students and 960 total listings in 90 days across the U.S colleges. We’re growing fast and still driven by the same mission: give every campus a trusted marketplace.
+                                p.text-muted Our five-person team launched Swap Door and attracted 598 students and 960 total listings in 90 days across the U.S colleges. We’re growing fast and still driven by the same mission: give every campus a trusted marketplace.
 
         // Team
         section#team.page-section.bg-light
@@ -166,7 +166,17 @@ html(lang='en')
             .container
                 .text-center
                     h2.section-heading.text-uppercase Contact Us
-                    h3.section-subheading.text-muted Get in touch with the eTrove team.
+                    h3.section-subheading.text-muted We'd love to hear from you! Reach out with questions, partnership ideas, or feedback.
+
+                // * * * * * * * * * * * * * * *
+                // * * SB Forms Contact Form * *
+                // * * * * * * * * * * * * * * *
+
+                // This form is pre-integrated with SB Forms.
+                // To make this form functional, sign up at
+                // https://startbootstrap.com/solution/contact-forms
+                // to get an API token!
+
                 form#contactForm(data-sb-form-api-token='API_TOKEN')
                     .row.align-items-stretch.mb-5
                         .col-md-6
@@ -174,24 +184,44 @@ html(lang='en')
                                 input#name.form-control(type='text', placeholder='Your Name *', data-sb-validations='required')
                                 .invalid-feedback(data-sb-feedback='name:required') A name is required.
                             .form-group
-                                input#email.form-control(type='email', placeholder='Your Email *', data-sb-validations='required,email')
-                                .invalid-feedback(data-sb-feedback='email:required') An email is required.
-                                .invalid-feedback(data-sb-feedback='email:email') Email is not valid.
+
+                                // Email address input
+                                input#email.form-control(
+                                    type='email',
+                                    placeholder='Your Email *',
+                                    data-sb-validations='required,email'
+                                )
+                                .invalid-feedback(data-sb-feedback='email:required')
+                                    | An email is required.
+                                .invalid-feedback(data-sb-feedback='email:email')
+                                    | Please enter a valid email address.
+
                             .form-group.mb-md-0
                                 input#phone.form-control(type='tel', placeholder='Your Phone *', data-sb-validations='required')
                                 .invalid-feedback(data-sb-feedback='phone:required') A phone number is required.
                         .col-md-6
                             .form-group.form-group-textarea.mb-md-0
-                                textarea#message.form-control(placeholder='Your Message *', data-sb-validations='required')
-                                .invalid-feedback(data-sb-feedback='message:required') A message is required.
+                                // Message input
+                                textarea#message.form-control(
+                                    placeholder='Your Message *',
+                                    data-sb-validations='required'
+                                )
+                                .invalid-feedback(data-sb-feedback='message:required')
+                                    | A message is required.
+
+                    // Submit success message
                     #submitSuccessMessage.d-none
                         .text-center.text-white.mb-3
-                            .fw-bolder Form submission successful!
-                            | To activate this form, sign up at
+                            .fw-bolder Thank you for reaching out!
+                            | We have received your message and will get back to you soon.
                             br
-                            a(href='https://etrove.com/contact-forms') https://etrove.com/contact-forms
+                            a(href='https://startbootstrap.com/solution/contact-forms') Learn more about our contact form integration
+
+                    // Submit error message
                     #submitErrorMessage.d-none
-                        .text-center.text-danger.mb-3 Error sending message!
+                        .text-center.text-danger.mb-3 There was an error sending your message. Please try again later.
+
+                    // Submit Button
                     .text-center
                         button#submitButton.btn.btn-primary.btn-xl.text-uppercase.disabled(type='submit') Send Message
 
@@ -214,13 +244,7 @@ html(lang='en')
 
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
-
         // Core theme JS
         script(src='js/scripts.js')
-
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://etrove.com/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
+        // SB Forms JS
         script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
