@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <title>eTrove LLC Official Website</title>
+
         <title>eTrove LLC</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -15,22 +17,382 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- Custom styles-->
+        <style>
+            /* Fix navbar - make it slightly larger */
+            #mainNav {
+                padding-top: 0.5rem !important;
+                padding-bottom: 0.5rem !important;
+                font-size: 0.9rem !important;
+                background-color: white !important;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+            }
+
+            /* Show navbar brand/logo */
+            #mainNav .navbar-brand {
+                display: block !important;
+                padding: 0.25rem 0 !important;
+            }
+
+            #mainNav .navbar-brand img {
+                height: 40px !important;
+                width: auto !important;
+                transition: transform 0.3s ease !important;
+            }
+
+            #mainNav .navbar-brand img:hover {
+                transform: scale(1.05) !important;
+            }
+
+            /* Make navbar links black and normal weight - slightly larger */
+            #mainNav .navbar-nav .nav-link {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.85rem !important;
+                color: black !important;
+                font-weight: 400 !important;
+            }
+
+            /* Ensure black text on hover/active - also normal weight */
+            #mainNav .navbar-nav .nav-link:hover,
+            #mainNav .navbar-nav .nav-link:focus,
+            #mainNav .navbar-nav .nav-link.active {
+                color: black !important;
+                font-weight: 400 !important;
+            }
+
+            /* Extended background from header */
+            header.masthead {
+                background-image: url('assets/img/header-bg1.jpg') !important;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                background-attachment: fixed !important;
+                min-height: 100vh !important;
+                height: 100vh !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            /* Use same gray color as header-bg1.jpg background */
+            section#services.page-section {
+                background-color: white !important; /* Clean white background */
+                background-image: none !important;
+                padding: 6rem 0 !important;
+            }
+
+            /* Remove body padding that breaks full screen */
+            body {
+                padding-top: 0 !important;
+            }
+
+            /* Center masthead content */
+            header.masthead .container {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                height: 100vh !important;
+                z-index: 2;
+                position: relative;
+            }
+
+            /* Reserve space for typing text */
+            .masthead-heading {
+                min-height: 120px !important; /* Reserve space for 3 lines */
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            /* Fix button position */
+            .masthead .btn {
+                position: relative !important;
+                margin-top: 2rem !important;
+            }
+
+            /* Make services text dark for visibility on white */
+            section#services h2.section-heading,
+            section#services h3.section-subheading {
+                color: #212529 !important; /* Dark text on white */
+                text-shadow: none !important; /* Remove text shadow */
+            }
+
+            /* Ensure seamless transition */
+            header.masthead,
+            section#services {
+                margin: 0 !important;
+                border: none !important;
+            }
+
+            /* Make Get Started button black and position lower */
+            .btn-primary {
+                background-color: black !important;
+                border-color: black !important;
+                color: white !important;
+            }
+
+            .btn-primary:hover,
+            .btn-primary:focus,
+            .btn-primary:active {
+                background-color: #333 !important;
+                border-color: #333 !important;
+                color: white !important;
+            }
+
+            /* Service step styling - horizontal layout */
+            .services-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 1.5rem;
+                margin-top: 3rem;
+                overflow-x: auto;
+                padding: 2rem 0;
+            }
+
+            .service-step {
+                flex: 1;
+                min-width: 180px;
+                max-width: 220px;
+                text-align: center;
+                position: relative;
+                opacity: 0;
+                transform: translateY(50px);
+                transition: all 1.5s ease;
+                padding: 0 0.5rem;
+            }
+
+            .service-step.animate {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .step-number {
+                display: inline-block;
+                background-color: black;
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                line-height: 50px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+                transition: all 0.3s ease;
+            }
+
+            .service-step:hover .step-number {
+                transform: scale(1.1);
+                background-color: #333;
+            }
+
+            /* Fix heading size and keep centered */
+            .service-step h4 {
+                font-size: 1rem !important;
+                font-weight: 600 !important;
+                margin-bottom: 1rem !important;
+                line-height: 1.2 !important;
+                text-align: center !important;
+            }
+
+            /* Center the text descriptions properly under titles */
+            .service-step p {
+                font-size: 0.85rem !important;
+                text-align: center !important; /* Change from left to center */
+                line-height: 1.4 !important;
+                margin: 0 auto !important;
+                max-width: 180px !important; /* Slightly reduce width */
+                padding: 0 0.25rem !important; /* Add small padding */
+            }
+
+            .arrow {
+                position: absolute;
+                top: 25px;
+                right: -0.75rem;
+                font-size: 1.5rem;
+                color: #ccc;
+                z-index: 1;
+            }
+
+            .service-step:last-child .arrow {
+                display: none;
+            }
+
+            /* Timeline text alignment */
+            .timeline > li .timeline-panel .timeline-body p {
+                text-align: left !important;
+            }
+
+            /* Ensure left timeline items have left-aligned text */
+            .timeline > li:not(.timeline-inverted) .timeline-panel .timeline-body p {
+                text-align: left !important;
+            }
+
+            /* Keep right timeline items left-aligned too for consistency */
+            .timeline > li.timeline-inverted .timeline-panel .timeline-body p {
+                text-align: left !important;
+            }
+
+            /* Also align timeline headings to the left */
+            .timeline > li .timeline-panel .timeline-heading h4 {
+                text-align: left !important;
+            }
+
+            .timeline > li .timeline-panel .timeline-heading h4.subheading {
+                text-align: left !important;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .services-container {
+                    flex-direction: column;
+                    gap: 3rem;
+                }
+
+                .service-step {
+                    max-width: 100%;
+                }
+
+                .arrow {
+                    position: static;
+                    transform: rotate(90deg);
+                    margin: 1rem 0;
+                }
+            }
+
+            /* Dropdown menu styling - HOVER activated with delay */
+            .navbar-nav .dropdown:hover .dropdown-menu {
+                display: block !important;
+            }
+
+            .navbar-nav .dropdown-menu {
+                display: none !important;
+                background-color: white !important;
+                border: 1px solid #e9ecef !important;
+                border-radius: 8px !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+                padding: 0.5rem 0 !important;
+                margin-top: 0.5rem !important;
+                min-width: 180px !important;
+                transition: opacity 0.3s ease, visibility 0.3s ease !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+            }
+
+            .navbar-nav .dropdown:hover .dropdown-menu {
+                opacity: 1 !important;
+                visibility: visible !important;
+                display: block !important;
+            }
+
+            /* Add hover area to prevent dropdown from disappearing */
+            .navbar-nav .dropdown {
+                position: relative !important;
+            }
+
+            .navbar-nav .dropdown::before {
+                content: '' !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                height: 10px !important;
+                background: transparent !important;
+                z-index: 999 !important;
+            }
+
+            .navbar-nav .dropdown-item {
+                color: #2c3e50 !important;
+                font-size: 0.85rem !important;
+                font-weight: 400 !important;
+                padding: 0.5rem 1.5rem !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.5px !important;
+                transition: all 0.3s ease !important;
+                text-decoration: none !important;
+            }
+
+            .navbar-nav .dropdown-item:hover {
+                background-color: transparent !important;
+                color: #2c3e50 !important;
+                text-decoration: underline !important;
+            }
+
+            /* Latest News Section Styling */
+            #news {
+                background-color: #f8f9fa !important;
+                padding: 6rem 0 !important;
+            }
+
+            .news-card {
+                background: white !important;
+                border-radius: 12px !important;
+                overflow: hidden !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+                transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+                height: 100% !important;
+            }
+
+            .news-card:hover {
+                transform: translateY(-5px) !important;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+            }
+
+            .news-image {
+                height: 200px !important;
+                overflow: hidden !important;
+            }
+
+            .news-image img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                transition: transform 0.3s ease !important;
+            }
+
+            .news-card:hover .news-image img {
+                transform: scale(1.05) !important;
+            }
+
+            .news-content {
+                padding: 1.5rem !important;
+            }
+
+            .news-content h4 {
+                font-size: 1.25rem !important;
+                font-weight: 600 !important;
+                margin-bottom: 1rem !important;
+                color: #2c3e50 !important;
+            }
+
+            .news-content p {
+                font-size: 0.95rem !important;
+                line-height: 1.6 !important;
+                margin-bottom: 1.5rem !important;
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo2.jpg" alt="eTrove LLC" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button">Explore</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">About</a></li>
+                                <li><a class="dropdown-item" href="team.html">Executives</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -38,8 +400,8 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-heading text-uppercase">Think simple, powerful tech that sparks growth, unlocks fresh ideas, fuels creativity and innovation, and brings communities closer.</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+                <div class="masthead-heading" id="typed-text" style="font-size: 2rem; font-weight: 700; line-height: 1.1; text-align: center"></div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Get Started</a>
             </div>
         </header>
         <!-- Services-->
@@ -47,105 +409,109 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">We built a secure and verified marketplace that enables college students to quickly buy and sell belongings with trusted users right on campus.</h3>
+                    <h3 class="section-subheading text-muted">We turn everyday friction into seamless flow, bringing innovation to every interaction.</h3>
                 </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-mobile-alt fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Appstore Application</h4>
-                        <p class="text-muted">Our secure and verified campus marketplace app is available on the App Store, enabling college students to buy and sell belongings quickly and safely with verified users.</p>
+                <div class="services-container">
+                    <div class="service-step">
+                        <div class="step-number"><span>1</span></div>
+                        <h4 class="my-3">Discovery & Goals</h4>
+                        <p class="text-muted">We clarify your vision, priorities, and success measures.</p>
+                        <div class="arrow">→</div>
                     </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Web Application</h4>
-                        <p class="text-muted">We’re building modern, responsive web apps with robust functionality—coming soon to elevate your business online.</p>
+                    <div class="service-step">
+                        <div class="step-number"><span>2</span></div>
+                        <h4 class="my-3">Platform Blueprint</h4>
+                        <p class="text-muted">We outline key features, user flows, technology stack, and create an interactive prototype.</p>
+                        <div class="arrow">→</div>
                     </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fab fa-android fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Android Application</h4>
-                        <p class="text-muted">We create professional, high-performance Android mobile applications optimized for usability and Google Play, coming soon.</p>
+                    <div class="service-step">
+                        <div class="step-number"><span>3</span></div>
+                        <h4 class="my-3">Visual Design</h4>
+                        <p class="text-muted">We craft logos, color palette, layouts, and micro interactions that keep your brand consistent.</p>
+                        <div class="arrow">→</div>
+                    </div>
+                    <div class="service-step">
+                        <div class="step-number"><span>4</span></div>
+                        <h4 class="my-3">Build & Launch</h4>
+                        <p class="text-muted">We code, test, and deploy a reliable, scalable platform ready for market.</p>
+                        <div class="arrow">→</div>
+                    </div>
+                    <div class="service-step">
+                        <div class="step-number"><span>5</span></div>
+                        <h4 class="my-3">Ongoing Support</h4>
+                        <p class="text-muted">We monitor performance and deliver updates that help your product grow with your business.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- About-->
-        <section class="page-section" id="about">
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
             <div class="container">
-                <div class="text-center"><h2 class="section-heading text-uppercase">About</h2></div>
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="2021" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading"><h4>2021</h4></div>
-                            <div class="timeline-body"><p class="text-muted">Founder Minjae Sung moved into college and saw the problem firsthand: third-party marketplaces were full of unverified profiles and scam posts. After being scammed himself, he set out to build a safer way for students to trade.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="2022" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading"><h4>2022</h4></div>
-                            <div class="timeline-body"><p class="text-muted">With no budget for outside developers, Minjae taught himself to code so classmates could trade confidently with verified school emails.</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="2024" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading"><h4>2024</h4></div>
-                            <div class="timeline-body"><p class="text-muted">Engineer Milan Rona joined as co-founder, rebuilding the backend for speed, security, and effortless scaling.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="2025" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading"><h4>2025</h4></div>
-                            <div class="timeline-body"><p class="text-muted">Our five-person team launched Swap Door and attracted 598 students and 960 total listings in 90 days across the U.S colleges. We’re growing fast and still driven by the same mission: give every campus a trusted marketplace.</p></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <!-- Team-->
-        <section class="page-section bg-light" id="team">
-            <div class="container">
-                <div class="text-start">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Meet the people behind eTrove LLC.</h3>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="Minjae Sung" />
-                            <h4>Minjae Sung</h4>
-                            <p class="text-muted text-start">
-                                Minjae is the founder, chairman, and CEO of eTrove. He launched eTrove (now SwapDoor) in 2025 and continues to steer the company’s vision and product strategy. He holds a B.S. in Economics from the University of California, San Diego.
-                            </p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Minjae Sung LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="Milan Rona" />
-                            <h4>Milan Rona</h4>
-                            <p class="text-muted text-start">
-                                Milan Rona is the Co-founder and CTO of eTrove, where he leads backend development, focusing on authentication, notifications, and overall platform performance. Joined mid‑project to help eTrove scale quickly and securely.
-                            </p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Milan Rona LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Apps</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <p class="large text-muted">We are passionate about building a secure and trusted marketplace for college students.</p>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/11.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">SwapDoor</div>
+                                <div class="portfolio-caption-subheading text-muted">Where campus meets marketplace</div>
+                            </div>
+                        </div>
+
                     </div>
+                </div>
+            </div>
+        </section>
+        <!-- Latest News Section-->
+        <section class="page-section" id="news">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our Latest News</h2>
+                    <h3 class="section-subheading text-muted">Stay updated with our latest developments and announcements</h3>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="news-card">
+                            <div class="news-image"><img class="img-fluid" src="assets/img/news/news1.jpg" alt="News 1" /></div>
+                            <div class="news-content">
+                                <h4>Platform Expansion Update</h4>
+                                <p class="text-muted">We're excited to announce SwapDoor's expansion to 50+ new universities across the country, bringing our trusted marketplace to more students.</p>
+                                <a class="btn btn-outline-primary btn-sm" href="#!">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="news-card">
+                            <div class="news-image"><img class="img-fluid" src="assets/img/news/news2.jpg" alt="News 2" /></div>
+                            <div class="news-content">
+                                <h4>New Security Features</h4>
+                                <p class="text-muted">Enhanced verification system and improved safety measures now live to ensure even more secure transactions for our campus community.</p>
+                                <a class="btn btn-outline-primary btn-sm" href="#!">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="news-card">
+                            <div class="news-image"><img class="img-fluid" src="assets/img/news/news3.jpg" alt="News 3" /></div>
+                            <div class="news-content">
+                                <h4>Community Growth Milestone</h4>
+                                <p class="text-muted">Celebrating 10,000+ active users and 25,000+ successful trades as we continue building the future of campus commerce.</p>
+                                <a class="btn btn-outline-primary btn-sm" href="#!">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center"><a class="btn btn-primary btn-lg" href="#!">See more at Newsroom</a></div>
                 </div>
             </div>
         </section>
@@ -168,50 +534,6 @@
                 </div>
             </div>
         </div>
-        <!-- Contact-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Get in touch with the eTrove team.</h3>
-                </div>
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://etrove.com/contact-forms">https://etrove.com/contact-forms</a>
-                        </div>
-                    </div>
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-                </form>
-            </div>
-        </section>
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
@@ -239,4 +561,53 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
+    <script>
+        // Typing animation for header
+        document.addEventListener('DOMContentLoaded', function () {
+            var text = 'Simple, powerful ideas that brings communities closer.';
+            var el = document.getElementById('typed-text');
+            if (el) {
+                el.textContent = '';
+                var i = 0;
+
+                function type() {
+                    if (i < text.length) {
+                        el.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, 100);
+                    }
+                }
+                setTimeout(type, 1000);
+            }
+
+            // Scroll-triggered service animation
+            function checkScroll() {
+                var servicesSection = document.getElementById('services');
+                var serviceSteps = document.querySelectorAll('.service-step');
+
+                if (servicesSection && serviceSteps.length > 0) {
+                    var rect = servicesSection.getBoundingClientRect();
+                    var windowHeight = window.innerHeight;
+
+                    // Check if services section is in view
+                    if (rect.top < windowHeight * 0.8) {
+                        serviceSteps.forEach(function (step, index) {
+                            setTimeout(function () {
+                                step.classList.add('animate');
+                            }, index * 500); // 500ms delay between each step
+                        });
+
+                        // Remove scroll listener after animation starts
+                        window.removeEventListener('scroll', checkScroll);
+                    }
+                }
+            }
+
+            // Listen for scroll events
+            window.addEventListener('scroll', checkScroll);
+
+            // Check on load in case services is already in view
+            checkScroll();
+        });
+    </script>
 </html>
